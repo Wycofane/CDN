@@ -1,0 +1,14 @@
+[Unit]
+Description=CDN
+After=network.target
+
+[Service]
+ExecStart=python3 /var/CDN/app.py
+User=root
+Type=idle
+Restart=always
+
+
+[Install]
+WantedBy=default.target
+RequiredBy=network.target
